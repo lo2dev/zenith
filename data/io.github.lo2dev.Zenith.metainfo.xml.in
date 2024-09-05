@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+	<id>io.github.lo2dev.Zenith.desktop</id>
+	<metadata_license>CC0-1.0</metadata_license>
+	<project_license>GPL-3.0-or-later</project_license>
+
+	<name>Zenith</name>
+  <summary>Browse the web, vertically</summary>
+
+  <developer id="io.github.lo2dev">
+    <name translate="no">Lo</name>
+  </developer>
+
+  <description>
+    <p>Browser with a vertical tab list.</p>
+    <p>It aims to be minimal, both in features and in looks. Currently very early in development.</p>
+  </description>
+
+  <launchable type="desktop-id">io.github.lo2dev.Zenith.desktop</launchable>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#f66151</color>
+    <color type="primary" scheme_preference="dark">#a51d2d</color>
+  </branding>
+
+  <recommends>
+    <display_length compare="ge">360</display_length>
+  </recommends>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+
+  <content_rating type="oars-1.1" />
+</component>

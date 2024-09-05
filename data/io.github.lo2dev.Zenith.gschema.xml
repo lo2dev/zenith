@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="zenith">
+	<schema id="io.github.lo2dev.Zenith" path="/io/github/lo2dev/Zenith/">
+
+	  <key name="win-width" type="i">
+	    <default>1500</default>
+	  </key>
+	  <key name="win-height" type="i">
+	    <default>780</default>
+	  </key>
+	  <key name="is-maximized" type="b">
+      <default>false</default>
+    </key>
+
+	  <key name="rounded-webpages" type="b">
+	    <default>false</default>
+	  </key>
+
+	</schema>
+</schemalist>

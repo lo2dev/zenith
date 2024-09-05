@@ -1,0 +1,6 @@
+data/io.github.lo2dev.Zenith.desktop.in
+data/io.github.lo2dev.Zenith.metainfo.xml.in
+data/io.github.lo2dev.Zenith.gschema.xml
+src/main.py
+src/window.py
+src/window.ui

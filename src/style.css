@@ -1,0 +1,15 @@
+.tabview_frame {
+  border-style: none;
+  border-radius: 0;
+  transition: 0.2s;
+}
+
+.rounded-webpages {
+  margin: 10px;
+  border-radius: 12px;
+}
+
+.url-bar > text {
+  padding: 10px 0px;
+}
+

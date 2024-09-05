@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=zenith
+Exec=zenith
+Icon=io.github.lo2dev.Zenith
+Terminal=false
+Type=Application
+Categories=GTK;web;browser;internet
+StartupNotify=true

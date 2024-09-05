@@ -1,0 +1,214 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $ZenithWindow: Adw.ApplicationWindow {
+  width-request: 360;
+  height-request: 200;
+  default-width: 1500;
+  default-height: 780;
+  title: "Zenith";
+
+  Adw.Breakpoint {
+    condition ("max-width: 750sp")
+
+    setters {
+      split_view.collapsed: true;
+    }
+  }
+
+  content: Adw.NavigationSplitView split_view {
+    show-content: true;
+
+    sidebar: Adw.NavigationPage sidebar {
+      width-request: 320;
+
+      child: Adw.ToolbarView {
+        [top]
+        HeaderBar {
+          [start]
+          MenuButton {
+            icon-name: "open-menu-symbolic";
+            menu-model: primary_menu;
+          }
+        }
+
+        [bottom]
+        Adw.ViewSwitcherBar switcher_bar {
+          stack: stack;
+          reveal: true;
+        }
+
+        content: Adw.ViewStack stack {
+          Adw.ViewStackPage tab_list {
+            name: "tab_list_page";
+            icon-name: "list-compact-symbolic";
+            title: _("Tabs");
+            use-underline: true;
+
+            child: Box {
+              Adw.Clamp {
+                Box {
+                  orientation: vertical;
+                  valign: start;
+
+                  Box {
+                    orientation: vertical;
+                    margin-end: 6;
+                    margin-start: 6;
+                    margin-bottom: 10;
+                    spacing: 5;
+
+                    Box {
+                      spacing: 5;
+                      hexpand: true;
+
+                      Button button_back {
+                        icon-name: "left-symbolic";
+                        tooltip-text: _("Back");
+                                              has-frame: false;
+                      }
+
+                      Button button_forward {
+                        icon-name: "right-symbolic";
+                        tooltip-text: _("Forward");
+                                              has-frame: false;
+                      }
+
+                      Button new_tab_button {
+                        icon-name: "plus-large-symbolic";
+                        tooltip-text: _("New Tab");
+                                              has-frame: false;
+                      }
+
+                      Box {
+                        homogeneous: true;
+                        hexpand: true;
+                      }
+
+                      /* I don't know how to implement this yet */
+                      /* ToggleButton {
+                        icon-name: "text-justify-left-symbolic";
+                        tooltip-text: _("Toggle Reader Mode");
+                      }
+
+                      ToggleButton {
+                        icon-name: "star-outline-thick-symbolic";
+                        tooltip-text: _("Bookmark This Webpage");
+                      } */
+
+                      Button button_reload {
+                        icon-name: "view-refresh-symbolic";
+                        tooltip-text: _("Reload");
+                        halign: end;
+                                              has-frame: false;
+                      }
+                    }
+
+                    Entry url_bar {
+                      input-purpose: url;
+                      placeholder-text: "Search the web by text or URL";
+                      hexpand: true;
+                      styles ["url-bar"]
+                    }
+                  }
+
+                  Box controls {
+                    spacing: 5;
+                  }
+
+                  ScrolledWindow {
+                    propagate-natural-height: true;
+
+                    Box {
+                      orientation: vertical;
+                      vexpand: true;
+
+                      ListView tablist {
+                        styles [
+                          "navigation-sidebar"
+                        ]
+
+                        factory: BuilderListItemFactory {
+                          template ListItem {
+                            child: Box {
+                              spacing: 6;
+
+                              Image tab_icon {
+                                icon-name: "earth-symbolic";
+                              }
+
+                              Label {
+                                label: bind template.item as <Adw.TabPage>.title;
+                                ellipsize: end;
+                                halign: start;
+                                hexpand: true;
+                                tooltip-text: bind template.item as <Adw.TabPage>.title;
+                              }
+                            };
+                          }
+                        };
+                      }
+                    }
+                  }
+                }
+              }
+            };
+          }
+
+          Adw.ViewStackPage bookmarks_page {
+            name: "bookmarks_page";
+            title: _("Bookmarks");
+            icon-name: "bookmark-filled-symbolic";
+            use-underline: true;
+
+            child: Adw.StatusPage {
+              title: bind bookmarks_page.title;
+              description: _("Soon™");
+              icon-name: bind bookmarks_page.icon-name;
+            };
+          }
+
+          Adw.ViewStackPage history_page {
+            name: "history_page";
+            title: _("History");
+            icon-name: "history-undo-symbolic";
+            use-underline: true;
+
+            child: Adw.StatusPage {
+              title: bind history_page.title;
+              description: _("Soon™");
+              icon-name: bind history_page.icon-name;
+            };
+          }
+        };
+      };
+    };
+
+    content: Adw.NavigationPage {
+      child: Frame tabview_frame {
+        styles ["tabview_frame"]
+
+        child: Adw.TabView tabview {};
+      };
+    };
+  };
+}
+
+menu primary_menu {
+  section {
+    item {
+      label: _("_Preferences");
+      action: "app.preferences";
+    }
+
+    item {
+      label: _("_Keyboard Shortcuts");
+      action: "win.show-help-overlay";
+    }
+
+    item {
+      label: _("_About Zenith");
+      action: "app.about";
+    }
+  }
+}

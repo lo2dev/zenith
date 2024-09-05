@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/io/github/lo2dev/Zenith/icons/scalable/actions/">
+    <file preprocess="xml-stripblanks" alias="left-symbolic.svg">../data/icons/scalable/actions/left-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="right-symbolic.svg">../data/icons/scalable/actions/right-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="bookmark-filled-symbolic.svg">../data/icons/scalable/actions/bookmark-filled-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="plus-large-symbolic.svg">../data/icons/scalable/actions/plus-large-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="history-undo-symbolic.svg">../data/icons/scalable/actions/history-undo-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="list-compact-symbolic.svg">../data/icons/scalable/actions/list-compact-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="earth-symbolic.svg">../data/icons/scalable/actions/earth-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="settings-symbolic.svg">../data/icons/scalable/actions/settings-symbolic.svg</file>
+  </gresource>
+  <gresource prefix="/io/github/lo2dev/Zenith">
+    <file preprocess="xml-stripblanks">window.ui</file>
+    <file preprocess="xml-stripblanks">preferences.ui</file>
+    <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
+    <file alias="style.css">style.css</file>
+  </gresource>
+</gresources>
