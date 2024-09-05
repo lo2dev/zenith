@@ -33,5 +33,12 @@
     <control>touch</control>
   </supports>
 
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/lo2dev/zenith/master/data/screenshots/screenshot1.png</image>
+      <caption>Zenith window with the sidebar on the left and web content on the right</caption>
+    </screenshot>
+  </screenshots>
+
   <content_rating type="oars-1.1" />
 </component>
